@@ -1,0 +1,22 @@
+---
+title: Nithin's Blog - Blog
+layout: 'base.njk'
+eleventyExcludeFromCollections: true
+--- 
+<!-- Page title -->
+<div class="page-title pt-5 pb-5 mb-4">
+  <div class="container">
+    <h2> All Blogs </h2>
+    <ul class="nav">
+      <li><a href="#">Blog</a></li>
+      <li>All</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Blog list -->
+<div class="container pt-4">
+  {%- for post in collections.post | reverse -%}
+    {% include 'article-snippet.njk' %}
+  {%- endfor %}
+</div>

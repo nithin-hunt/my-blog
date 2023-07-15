@@ -5,16 +5,74 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{title}}</title>
-  <link rel="stylesheet" href="/style.css">
+  <!--==== Favicon ====-->
+  <link rel="icon" href="/assets/favicons/favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="/assets/favicons/apple-touch-icon.png">
+
+  <!--==== Google Fonts ====-->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+  <!-- CSS Files -->
+
+  <!--==== Bootstrap css file ====-->
+  <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+
+  <!--==== Font-Awesome css file ====-->
+  <link rel="stylesheet" href="/assets/css/font-awesome.min.css">
+
+  <!--==== Animate CSS ====-->
+  <link rel="stylesheet" href="/assets/plugins/animate/animate.min.css">
+
+  <!--==== Owl Carousel ====-->
+  <link rel="stylesheet" href="/assets/plugins/owl-carousel/owl.carousel.min.css">
+
+  <!--==== Magnific Popup ====-->
+  <link rel="stylesheet" href="/assets/plugins/magnific-popup/magnific-popup.css">
+
+  <!--==== Style css file ====-->
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <!--==== Custom css file ====-->
+  <link rel="stylesheet" href="/assets/css/custom.css">
+
   <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </head>
 <body>
+  <!-- Preloader -->
+  <div class="preloader">
+      <div class="preload-img">
+          <div class="spinnerBounce">
+              <div class="double-bounce1"></div>
+              <div class="double-bounce2"></div>
+          </div>
+      </div>
+  </div>
+  <!-- End of Preloader -->
+
   {% include 'header.njk' %}
-  <main>
-    {{ content | safe }}
-  </main>
+  {{ content | safe }}
   {% include 'footer.njk' %}
 
+  <!-- JS Files -->
+
+  <!-- ==== JQuery 1.12.1 js file ==== -->
+  <script src="/assets/js/jquery-1.12.1.min.js"></script>
+
+  <!-- ==== Bootstrap js file ==== -->
+  <script src="/assets/js/bootstrap.bundle.min.js"></script>
+
+  <!-- ==== Owl Carousel ==== -->
+  <script src="/assets/plugins/owl-carousel/owl.carousel.min.js"></script>
+
+  <!-- ==== Magnific Popup ==== -->
+  <script src="/assets/plugins/magnific-popup/jquery.magnific-popup.min.js"></script>
+    
+  <!-- ==== Script js file ==== -->
+  <script src="/assets/js/scripts.js"></script>
+
+  <!-- ==== Custom js file ==== -->
+  <script src="/assets/js/custom.js"></script>
+  
   <script>
   if (window.netlifyIdentity) {
     window.netlifyIdentity.on("init", user => {

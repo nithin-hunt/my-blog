@@ -1,0 +1,23 @@
+<div class="banner-slide">
+  <div class="row align-items-center">
+    <div class="col-md-6 order-2 order-md-1">
+      <!-- Banner Text -->
+      <div class="banner-slide-text">
+        {% for category in post.data.categories -%}
+          <p class="category"><a href="/blog/{{ category | lower }}">{{category}}</a></p>
+        {%- endfor %}
+        <h1>{{ post.data.title }}</h1>
+        <p class="desc">{{ post.data.description}}</p>
+        <a href="{{ post.url }}" class="btn btn-primary">Continue Reading</a>
+      </div>
+      <!-- End of Banner Text -->
+    </div>
+    <div class="col-md-6 order-1 order-md-2">
+      <!-- Banner Image -->
+      <div class="banner-slide-image d-flex align-items-center">
+        <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="img-fluid">
+      </div>
+      <!-- End of Banner Image -->
+    </div>
+  </div>
+</div>

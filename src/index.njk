@@ -1,33 +1,116 @@
 ---
-title: example
+title: Nithin's Blog - Home
 layout: 'base.njk'
 ---
 
-<section class="hero">
-  <div class="container flow">
-      <div class="hero__content flow">
-        <h1 class="section-title">Welcome to my blog!</h1>
-        <p>I use this space to document my adventures in front-end development, sharing how I’ve overcome issues I’ve run into, useful resources, and more.</p>
-        <p>Below are some of my favourite articles, or you can go to the blog page to see my most recent posts.</p>
-        <div class="flex-group">
-          <a href="#featured-articles" class="btn btn--primary">Featured articles</a>
-          <a href="./blog" class="btn btn--neutral">Most recent articles</a>
+<!-- Banner -->
+<div class="banner-slider-cover d-flex align-items-center">
+  <div class="container">
+  <div class="banner-slider owl-carousel">
+    <!-- Banner Slide -->
+    {%- for post in collections.featured | reverse -%}
+      {% include 'banner-slide.njk' %}
+    {%- endfor %}
+    <!-- End of Banner Slide -->
+  </div>
+  <!-- Banner Dots Slider -->
+  <div class="banner-slider-dots owl-carousel"></div>
+  </div>
+  <!-- End of Banner Dots Slider -->
+</div>
+<!-- End of Banner -->
+
+<!-- post with sidebar -->
+<div class="container pt-40 pb-90">
+  <div class="row">
+  <div class="col-lg-8">
+    <!-- Recent Post -->
+    <section class="popular-post pb-10">
+    <!-- Section title -->
+    <div class="section-title">
+      <h2>Recent Posts</h2>
+    </div>
+    <!-- End of Section title -->
+
+    <div class="post-blog-list">
+      <!-- Post -->
+      {%- for post in collections.featured | reverse -%}
+        {% include 'recent-posts.njk' %}
+      {%- endfor %}
+      <!-- End of Post -->
+    </div>
+    </section>
+  </div>
+  <div class="col-lg-4">
+    <div class="pt-88">
+    <div class="my-sidebar">
+      <!-- Author Widget -->
+      <div class="widget widget-about">
+      <!-- Widget Content -->
+      <div class="widget-content">
+        <!-- Author Image -->
+        <div class="author-image">
+        <img src="/assets/images/dp.png" alt="Author-Image" class="img-fluid">
+        </div>
+        <!-- Author Name -->
+        <div class="author-name text-center">
+        <a href="https://nithinravi.com/" target="_blank"> Nithin Ravi </a>
+        </div>
+        <!-- Author Social Links -->
+        <div class="author-social text-center">
+        <a href="#"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.linkedin.com/in/nithin-developer" target="_blank"><i class="fa fa-linkedin"></i></a>
+        <a href="https://github.com/nithin-hunt" target="_blank"><i class="fa fa-git-square"></i></a>
+        </div>
+        <!-- Author Text -->
+        <div class="author-text text-center">
+        I use this space to document my adventures in full-stack development, sharing how I’ve overcome issues I’ve run into, useful resources, and more.
         </div>
       </div>
-      <div>
-        <img src="//unsplash.it/510" alt="" class="hero__image">
+      <!-- End of Widget Content -->
       </div>
-  </div>
-</section>
+      <!-- End of Author Widget -->
 
-<section id="featured-articles" class="featured-articles">
-  <div class="container flow">
-    <h2 class="section-title text-center ">Featured articles</h2>
-    <p class="text-center">Here is a sample of articles which I feel give you a good idea of what this site is all about.</p>
-    <ul role="list" class="articles__list flow">
-      {%- for post in collections.featured | reverse -%}
-        {% include 'article-snippet.njk' %}
-      {%- endfor %}
-    </ul>
+      <!-- Tags Cloud Widget -->
+      <div class="widget widget-tag-cloud">
+      <!-- Widget Title -->
+      <h4 class="widget-title">
+        Tags
+      </h4>
+      <!-- End of Widget Title -->
+
+      <!-- Widget Content -->
+      <div class="widget-content tagcloud">
+        <a href="/blog/html">HTML</a>
+        <a href="/blog/css">CSS</a>
+        <a href="/blog/javascript">Javascript</a>
+        <a href="/blog/rails">Rails</a>
+      </div>
+      <!-- End of Widget Content -->
+      </div>
+      <!-- End of Tags Cloud Widget -->
+
+      <!-- Featured Post Widget -->
+      <div class="widget widget-recent-post">
+        <!-- Widget Title -->
+        <h4 class="widget-title">
+          Featured Post
+        </h4>
+        <!-- End of Widget Title -->
+
+        <!-- Widget Content -->
+        <div class="widget-content">
+          <!-- Single Post -->
+          {%- for post in collections.featured | reverse -%}
+            {% include 'featured-posts.njk' %}
+          {%- endfor %}
+        </div>
+        <!-- End of Widget Content -->
+      </div>
+      <!-- End of Recent Post Widget -->
+    </div>
+    </div>
+
   </div>
-</section> 
+  </div>
+</div>
