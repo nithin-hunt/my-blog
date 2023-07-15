@@ -1,9 +1,35 @@
-<li>
-  <article class="snippet">
-    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}" class="snippet__image">
-    <h3 class="snippet__title"><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-    <p class="snippet_meta">by <span>{{ post.data.author }}</span> on <span>{{ post.date | postDate }}</span></p>
-    <p class="snippet__body">{{ post.data.description}}</p>
-    <a href="{{ post.url }}" class="btn btn--primary">Continue Reading</a>
-  </article>
-</li>
+<!-- Post -->
+  <div class="post-default post-has-right-thumb">
+    <div class="d-flex flex-wrap">
+      <div class="post-thumb align-self-stretch order-md-2">
+        <a href="blog-details.html">
+          <div data-bg-img="{{ post.data.image }}"></div>
+        </a>
+      </div>
+      <div class="post-data order-md-1">
+        <!-- Category -->
+        {# <div class="cats"><a href="category-result.html">Love</a></div> #}
+        <!-- Title -->
+        <div class="title">
+          <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+        </div>
+        <!-- Post Meta -->
+        <ul class="nav meta align-items-center">
+          <li class="meta-author">
+            <img src="/assets/images/dp-small.png" alt="" class="img-fluid">
+            <a href="https://nithinravi.com/" target="_blank">{{ post.data.author }}</a>
+          </li>
+          <li class="meta-date"><a href="#">{{ post.date | postDate }}</a></li>
+        </ul>
+        <!-- Post Desc -->
+        <div class="desc">
+          <p>
+            {{ post.data.description}}
+          </p>
+        </div>
+        <!-- Read More Button -->
+        <a href="{{ post.url }}" class="btn btn-primary">Continue Reading</a>
+      </div>
+    </div>
+  </div>
+<!-- End of Post -->

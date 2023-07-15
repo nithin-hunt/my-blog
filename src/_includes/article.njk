@@ -2,20 +2,81 @@
 layout: 'base.njk'
 ---
 
-<article class="main-article">
-  <div class="container container--narrow flow">
-    
-    <h1 class="article-title">
-      {{ title }}
-    </h1>
-    <figure class="main-article__figure">
-      <img src="{{ image }}" alt="{{ imageAlt }}">
-      <figcaption>
-        {{ imageAlt }}
-      </figcaption>
-    </figure>
+<div class="container pb-80">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <div class="post-details-cover post-has-video-thumb">
+        <!-- Post Thumbnail -->
+        <div class="post-thumb-cover">
+          <div class="d-flex pb-4">
+            <img src="{{ image }}" alt="{{ imageAlt }}" class="img-fluid mx-auto" style="height: 50vh; width: 75vw;">
+          </div>
+          <!-- Post Meta Info -->
+          <div class="post-meta-info">
+            <!-- Category -->
+            <p class="cats">
+              <a href="#">Featured</a>
+              <a href="#">Adventure</a>
+            </p>
 
-    {{ content | safe }}
-      
+            <!-- Title -->
+            <div class="title">
+              <h2>{{ title }}</h2>
+            </div>
+
+            <!-- Meta -->
+            <ul class="nav meta align-items-center">
+              <li class="meta-author">
+                <img src="/assets/images/dp-small.png" alt="" class="img-fluid">
+                <a href="#"> {{ author }} </a>
+              </li>
+              <li class="meta-date"><a href="#">{{ date | postDate }}</a></li>
+              <li> 2 min read </li>
+            </ul>
+          </div>
+          <!-- End of Post Meta Info -->
+        </div>
+        <!-- End oF Post Thumbnail -->
+
+        <!-- Post Content -->
+        <div class="post-content-cover my-drop-cap text-justify">
+          {{ content | safe }}
+        </div>
+        <!-- End of Post Content -->
+
+        <!-- Tags -->
+        <div class="post-all-tags">
+          <a href="#">Fashion</a>
+          <a href="#">Art</a>
+          <a href="#">Lifestyle</a>
+          <a href="#">Love</a>
+          <a href="#">Travel</a>
+          <a href="#">Movie</a>
+          <a href="#">Games</a>
+        </div>
+        <!-- End of Tags -->
+
+        <!-- Author Box -->
+        <div class="post-about-author-box">
+          <div class="author-avatar">
+            <img src="/assets/images/dp-small.png" alt="" class="img-fluid">
+          </div>
+          <div class="author-desc">
+            <h5> <a href="https://nithinravi.com/" target="_blank"> Nithin Ravi </a> </h5>
+            <div class="description">
+              I use this space to document my adventures in full-stack development, sharing how I’ve overcome issues I’ve run into, useful resources, and more.
+            </div>
+            <div class="social-icons">
+              <a href="#"><i class="fa fa-facebook"></i></a>
+              <a href="#"><i class="fa fa-twitter"></i></a>
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-pinterest"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+            </div> 
+          </div>
+        </div>
+        <!-- End of Author Box -->
+      </div>
+    </div>
   </div>
-</article>
+</div>
